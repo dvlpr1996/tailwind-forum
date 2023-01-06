@@ -6,8 +6,7 @@
 	"description": "forum based on the tailwind and alpine.js",
 	"main": "index.html",
 	"scripts": {
-		"dev": "npx tailwindcss -i ./app/css/input.css -o ./dist/css/output.css --watch",
-		"build": "npx tailwindcss -i ./app/css/input.css -o ./dist/css/output.css --minify"
+		"dev": "npx tailwindcss -i ./app/css/input.css -o ./dist/css/output.css --watch"
 	},
 	"repository": {
 		"type": "git",

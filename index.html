@@ -16,231 +16,55 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<link rel="stylesheet" href="dist/css/output.css">
-	<script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
 	<!-- [if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<![endif] -->
 </head>
 
-<body class="master-body debug-screens">
-	<nav class="flex items-center justify-between rounded-lg bg-slate-800 p-4 font-medium text-gray-300">
-		<div class="flex items-center space-x-3">
-			<a href="home.html">
+<body class="mx-auto max-w-7xl">
+	<nav class="rounded-lg bg-slate-800 p-3 font-medium text-gray-300">
+		<div class="flex items-center gap-2">
+			<a href="index.html">
 				<img src="dist/logo.png" alt="logo" class="logo" loading="lazy">
 			</a>
-			<a href="index.html" class="hover:text-white">home</a>
-
-			<a href="profile.html" class="hover:text-white">profile</a>
-		</div>
-
-		<div x-data="dropdown" x-on:click.away="away()" class="relative">
-			<i class="fas fa-tachometer-alt mr-1"></i>
-			<button x-on:click="toggle()" class="hover:text-white">
-				jane doe
-			</button>
-			<div x-show="open" x-transition.duration.500ms
-				class="border-2 absolute top-8 right-0 z-20 hidden min-w-[170px] space-y-3 rounded-lg border-slate-600 bg-slate-800 p-2"
-				x-bind:class="{ 'hidden': !open }">
-
-				<a href="#" class="m-2 block text-left hover:text-white">
-					<i class="ri-user-fill mr-1 align-middle"></i>
-					add topics
-				</a>
-
-				<a href="profile.html" class="m-2 block text-left hover:text-white">
-					<i class="ri-user-fill mr-1 align-middle"></i>
-					profile
-				</a>
-
-				<a href="#" class="m-2 block text-left hover:text-white">
-					<i class="ri-lock-fill mr-1 align-middle"></i>
-					Lock Screen
-				</a>
-
-				<hr>
-
-				<a href="index.html" class="m-2 block text-left hover:text-white">
-					<i class="ri-logout-circle-line mr-1 align-middle"></i>
-					Logout
-				</a>
-
-			</div>
+			<span>Laravel User Rating System</span>
 		</div>
 	</nav>
 
-	<main class="my-10 flex gap-3">
-		<aside class="hidden space-y-5 md:block md:w-3/12 lg:w-2/12">
+	<main class="my-12 sm:my-24 space-y-8 sm:space-y-16">
 
-			<div class="space-y-3">
-				<h4>categories</h4>
-				<ul class="ml-2 space-y-3" x-data="data">
-					<template x-for="cat in categories">
-						<li>
-							<a href="#" class="text-base" x-text="cat">
-								<i class="mr-1"></i>
-							</a>
-						</li>
-					</template>
-				</ul>
+		<section class="space-y-8 text-center">
+			<h1>tailwindCss User Rating System</h1>
+			<a href="https://github.com/dvlpr1996/tailwind-forum" title="dvlpr1996 github account"
+				class="btn mx-auto max-w-max py-2 px-9">
+				<i class="fab fa-github text-xl"></i>
+				github link
+			</a>
+		</section>
+
+		<section class="mx-auto max-w-5xl space-y-10 text-center">
+			<h2>description</h2>
+			<p class="capitalize text-xl leading-9">
+				online discussion site is a tailwindCss User Rating project,
+				where user can create conversations or create answer to other topics and get badge based on their xp.
+				this project is just an Ui of Laravel user rating system.
+			</p>
+
+			<a href="home.html" class="btn mx-auto max-w-max py-3 px-9">
+				go to app
+			</a>
+		</section>
+
+		<section class="space-y-10 text-center">
+			<h2>language and tools</h2>
+			<div class="flex flex-wrap items-center justify-center gap-3">
+				<img src="dist/tools/php.png" class="tools-img" alt="php" title="php">
+				<img src="dist/tools/laravel.jpg" class="tools-img" alt="laravel" title="laravel">
+				<img src="dist/tools/tailwind.png" class="tools-img" alt="tailwind" title="tailwind">
+				<img src="dist/tools/js.png" class="tools-img" alt="js" title="js">
+				<img src="dist/tools/css.jpg" class="tools-img" alt="css" title="css">
+				<img src="dist/tools/html.png" class="tools-img" alt="html" title="html5">
 			</div>
-
-			<hr>
-
-			<div class="space-y-5" x-data="data">
-				<h4>top xp</h4>
-				<template x-for="person in persons">
-					<div class="flex items-center gap-2">
-						<img :src="person.image" alt="avatar" class="h-14 w-14 rounded-full">
-						<div class="flex flex-col">
-							<a href="profile.html" class="text-base" x-text="person.name"></a>
-							<p class="text-sm" x-text="person.xp"></p>
-						</div>
-					</div>
-				</template>
-			</div>
-
-			<hr>
-
-			<div class="space-y-3">
-				<h4>statistics</h4>
-				<ul class="ml-2 space-y-3">
-					<li>
-						<i class="fas fa-user"></i>
-						count user : 10
-					</li>
-					<li>
-						<i class="fas fa-question-circle"></i>
-						count topics : 100
-					</li>
-					<li>
-						<i class="fas fa-comment-dots"></i>
-						count reply : 450
-					</li>
-					<li>
-						<i class="fas fa-check-circle"></i>
-						count best reply : 48
-					</li>
-				</ul>
-			</div>
-
-		</aside>
-
-		<section class="w-full md:w-9/12 lg:w-10/12">
-			<div class="text-center sm:text-left">
-				<h2 class="mb-2">discussion room</h2>
-				<span>A place where your questions become answers</span>
-			</div>
-
-			<div class="mt-5 grid grid-cols-12 gap-5">
-				<div class="col-span-12 sm:col-span-9 xl:col-span-10">
-					<form action="#">
-						<div class="flex items-center justify-start">
-							<input type="text" class="form-control m-0 rounded-r-none py-1" name="" placeholder="search your topics">
-							<button type="submit" class="btn w-[initial] rounded-l-none">
-								<i class="fas fa-search"></i>
-							</button>
-						</div>
-					</form>
-				</div>
-
-				<div class="col-span-12 sm:col-span-3 xl:col-span-2">
-					<a href="#" class="btn w-[initial]">new topic</a>
-				</div>
-			</div>
-
-			<div class="mt-5 grid grid-cols-12 items-center gap-3 sm:gap-0">
-				<div class="col-span-12 sm:col-span-3">
-					<select class="form-control capitalize">
-						<option selected>sort by</option>
-						<option value="newest">newest</option>
-						<option value="oldest">oldest</option>
-						<option value="no-answer">no answer</option>
-						<option value="solved">solved</option>
-					</select>
-				</div>
-
-				<div x-data="dropdown" x-on:click.away="away()"
-					class="relative col-span-12 block sm:col-start-10 sm:col-end-13 md:hidden">
-					<button x-on:click="toggle()" class="form-control">
-						categories
-					</button>
-					<div x-show="open" x-transition.duration.500ms
-						class="absolute top-14 right-0 z-20 hidden w-full space-y-3 rounded-lg border-2 border-slate-600 bg-slate-800 p-2 sm:min-w-[200px]"
-						x-bind:class="{ 'hidden': !open }">
-
-						<ul class="ml-2 space-y-3" x-data="data">
-							<template x-for="cat in categories">
-								<li>
-									<a href="#" class="text-base" x-text="cat">
-										<i class="mr-1"></i>
-									</a>
-								</li>
-							</template>
-						</ul>
-
-					</div>
-				</div>
-			</div>
-
-			<section class="my-5 space-y-3" x-data>
-				<template x-for="i in 5">
-					<div class="space-y-6 rounded-lg bg-slate-800 p-4 font-medium text-gray-300">
-						<div class="flex items-center justify-between">
-							<div class="flex items-center gap-2">
-								<img src="dist/jane.jpg" alt="jane doe" class="h-12 w-12 rounded-full">
-								<div class="flex flex-col">
-									<a href="profile.html" class="text-base">
-										jane doe
-									</a>
-									<p class="text-sm">2023-01-01</p>
-								</div>
-							</div>
-							<div class="flex gap-2">
-								<div class="select-none rounded-lg bg-slate-900 p-3 text-center">
-									<p class="text-sm">reply</p>
-									<p x-text="i"></p>
-								</div>
-
-								<div class="select-none rounded-lg bg-slate-900 p-3 text-center">
-									<p class="text-sm">visit</p>
-									<p>5</p>
-								</div>
-
-							</div>
-						</div>
-
-						<div>
-							<p class="font-semibold">
-								<a href="topic.html">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, debitis???
-								</a>
-							</p>
-
-							<p class="line-clamp-2 my-3">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum at totam ipsam dolorum commodi iste!
-							</p>
-						</div>
-
-						<hr>
-
-						<div class="mt-5 flex justify-between">
-							<a href="#" class="tag">PHP</a>
-
-							<div class="flex gap-3">
-								<a href="#" onclick="return confirm('Are you sure?')" class="cursor-pointer">
-									<i class="fas fa-trash ml-1"></i>
-								</a>
-
-								<a href="#" class="cursor-pointer">
-									<i class="fas fa-edit ml-1"></i>
-								</a>
-							</div>
-						</div>
-
-					</div>
-				</template>
-			</section>
-
 		</section>
 	</main>
 
@@ -268,6 +92,7 @@
 
 	</footer>
 </body>
+
 <script src="dist/js/main.js"></script>
 <noscript>your browser dose not support javascript!!!</noscript>
 
