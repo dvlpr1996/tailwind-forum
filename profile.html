@@ -68,119 +68,48 @@
 		</div>
 	</nav>
 
-	<main class="my-10 flex gap-3">
-		<aside class="hidden space-y-5 md:block md:w-3/12 lg:w-2/12">
+	<main>
+		<header class="mt-5 rounded-lg bg-slate-800 p-5">
+			<div class="flex flex-col items-center gap-3">
+				<img src="dist/jane.jpg" alt="jane doe"
+					class="h-48 w-48 rounded-full object-fill outline-none outline-2 outline-offset-4 outline-slate-900">
 
-			<div class="space-y-3">
-				<h4>categories</h4>
-				<ul class="ml-2 space-y-3" x-data="data">
-					<template x-for="cat in categories">
-						<li>
-							<a href="category.html" class="text-base" x-text="cat">
-								<i class="mr-1"></i>
-							</a>
-						</li>
-					</template>
-				</ul>
+				<h1>Jane Doe</h1>
+				<p>Vue.js developer</p>
+
 			</div>
 
-			<hr>
-
-			<div class="space-y-5" x-data="data">
-				<h4>top xp</h4>
-				<template x-for="person in persons">
-					<div class="flex items-center gap-2">
-						<img :src="person.image" alt="avatar" class="h-14 w-14 rounded-full">
-						<div class="flex flex-col">
-							<a href="profile.html" class="text-base" x-text="person.name"></a>
-							<p class="text-sm" x-text="person.xp"></p>
-						</div>
-					</div>
-				</template>
+			<div class="mt-5 flex flex-col items-center justify-between gap-3 sm:flex-row">
+				<a href="#" class="btn w-[initial]">
+					new topics
+				</a>
+				<p>date of join 2023-01-01</p>
 			</div>
+		</header>
 
-			<hr>
+		<div class="mt-5 rounded-lg bg-slate-800 p-5">
+			<ul class="flex flex-col flex-wrap items-center justify-evenly gap-5 text-gray-300 sm:flex-row lg:flex-nowrap">
+				<li class="text-2xl text-gray-100 hover:cursor-pointer">
+					<a href="#">topics : 50</a>
+				</li>
+				<li class="text-2xl text-gray-100 hover:cursor-pointer">
+					<a href="#">xp : 7</a>
+				</li>
 
-			<div class="space-y-3">
-				<h4>statistics</h4>
-				<ul class="ml-2 space-y-3">
-					<li>
-						<i class="fas fa-user"></i>
-						count user : 10
-					</li>
-					<li>
-						<i class="fas fa-question-circle"></i>
-						count topics : 100
-					</li>
-					<li>
-						<i class="fas fa-comment-dots"></i>
-						count reply : 450
-					</li>
-					<li>
-						<i class="fas fa-check-circle"></i>
-						count best reply : 48
-					</li>
-				</ul>
-			</div>
+				<li class="text-2xl">
+					answers : 10
+				</li>
+				<li class="text-2xl">
+					best answers : 5
+				</li>
+			</ul>
+		</div>
 
-		</aside>
-
-		<section class="w-full md:w-9/12 lg:w-10/12">
-			<div class="text-center sm:text-left">
-				<h2 class="mb-2">discussion room</h2>
-				<span>A place where your questions become answers</span>
-			</div>
-
-			<div class="mt-5 grid grid-cols-12 gap-5">
-				<div class="col-span-12 sm:col-span-9 xl:col-span-10">
-					<form action="#">
-						<div class="flex items-center justify-start">
-							<input type="text" class="form-control m-0 rounded-r-none py-1" name="" placeholder="search your topics">
-							<button type="submit" class="btn w-[initial] rounded-l-none">
-								<i class="fas fa-search"></i>
-							</button>
-						</div>
-					</form>
-				</div>
-
-				<div class="col-span-12 sm:col-span-3 xl:col-span-2">
-					<a href="#" class="btn w-[initial]">new topic</a>
-				</div>
-			</div>
-
-			<div class="mt-5 grid grid-cols-12 items-center gap-3 sm:gap-0">
-				<div class="col-span-12 sm:col-span-3">
-					<select class="form-control capitalize">
-						<option selected>sort by</option>
-						<option value="newest">newest</option>
-						<option value="oldest">oldest</option>
-						<option value="no-answer">no answer</option>
-						<option value="solved">solved</option>
-					</select>
-				</div>
-
-				<div x-data="dropdown" x-on:click.away="away()"
-					class="relative col-span-12 block sm:col-start-10 sm:col-end-13 md:hidden">
-					<button x-on:click="toggle()" class="form-control">
-						categories
-					</button>
-					<div x-show="open" x-transition.duration.500ms
-						class="absolute top-14 right-0 z-20 hidden w-full space-y-3 rounded-lg border-2 border-slate-600 bg-slate-800 p-2 sm:min-w-[200px]"
-						x-bind:class="{ 'hidden': !open }">
-
-						<ul class="ml-2 space-y-3" x-data="data">
-							<template x-for="cat in categories">
-								<li>
-									<a href="category.html" class="text-base" x-text="cat">
-										<i class="mr-1"></i>
-									</a>
-								</li>
-							</template>
-						</ul>
-
-					</div>
-				</div>
-			</div>
+		<section class="my-5 space-y-5">
+			<h2>
+				<i class="fas fa-question-circle"></i>
+				all topics
+			</h2>
 
 			<section class="my-5 space-y-3" x-data>
 				<template x-for="i in 5">
@@ -240,8 +169,8 @@
 					</div>
 				</template>
 			</section>
-
 		</section>
+
 	</main>
 
 	<footer
