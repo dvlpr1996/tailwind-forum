@@ -14,8 +14,6 @@
 	<meta name="description" content="Forum based on tailwindCss | dvlpr1996">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <link rel="icon" type="image/png" sizes="16x16" href="...">
-		<link rel="apple-touch-icon" sizes="180x180" href="..."> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<link rel="stylesheet" href="dist/css/output.css">
 	<script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
@@ -27,7 +25,9 @@
 <body class="master-body debug-screens">
 	<nav class="flex items-center justify-between rounded-lg bg-slate-800 p-4 font-medium text-gray-300">
 		<div class="flex items-center space-x-3">
-			<img src="dist/logo.png" alt="logo" class="logo" loading="lazy">
+			<a href="home.html">
+				<img src="dist/logo.png" alt="logo" class="logo" loading="lazy">
+			</a>
 			<a href="index.html" class="hover:text-white">home</a>
 
 			<a href="profile.html" class="hover:text-white">profile</a>
@@ -76,7 +76,7 @@
 				<ul class="ml-2 space-y-3" x-data="data">
 					<template x-for="cat in categories">
 						<li>
-							<a href="category.html" class="text-base" x-text="cat">
+							<a href="#" class="text-base" x-text="cat">
 								<i class="mr-1"></i>
 							</a>
 						</li>
@@ -171,7 +171,7 @@
 						<ul class="ml-2 space-y-3" x-data="data">
 							<template x-for="cat in categories">
 								<li>
-									<a href="category.html" class="text-base" x-text="cat">
+									<a href="#" class="text-base" x-text="cat">
 										<i class="mr-1"></i>
 									</a>
 								</li>
@@ -189,7 +189,7 @@
 							<div class="flex items-center gap-2">
 								<img src="dist/jane.jpg" alt="jane doe" class="h-12 w-12 rounded-full">
 								<div class="flex flex-col">
-									<a href="#" class="text-base">
+									<a href="profile.html" class="text-base">
 										jane doe
 									</a>
 									<p class="text-sm">2023-01-01</p>
@@ -211,7 +211,7 @@
 
 						<div>
 							<p class="font-semibold">
-								<a href="#">
+								<a href="topic.html">
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, debitis???
 								</a>
 							</p>
