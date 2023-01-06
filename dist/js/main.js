@@ -1,10 +1,1 @@
-let year = document.querySelector("#year");
-if (year) {
-	year.innerHTML = (new Date).getFullYear();
-}
-
-window.addEventListener("load", () => {
-	window.addEventListener("offline", () => {
-		alert("you are offline. check your internet connection");
-	});
-});
+document.addEventListener("alpine:init",()=>{Alpine.data("dropdown",()=>({open:!1,toggle(){this.open=!this.open},away(){this.open=!1}})),Alpine.data("modal",()=>({showModal:!1,toggle(){this.showModal=!this.showModal},close(){this.showModal=!1},transition:{"x-transition:enter":()=>"motion-safe:ease-out duration-300","x-transition:enter-start":()=>"opacity-0 scale-90","x-transition:enter-end":()=>"opacity-100 scale-100"}})),Alpine.data("data",()=>({categories:["PHP","LARAVEL","MYSQL","VUE.JS","PYTHON"],persons:[{id:1,name:"john doe",xp:"XP: 10",image:"dist/john.jpg"},{id:2,name:"sara doe",xp:"XP: 8",image:"dist/sara.jpg"},{id:3,name:"jane doe",xp:"XP: 7",image:"dist/jane.jpg"}]}))});let year=document.querySelector("#year");year&&(year.innerHTML=(new Date).getFullYear()),window.addEventListener("load",()=>{window.addEventListener("offline",()=>{alert("you are offline. check your internet connection")})});
