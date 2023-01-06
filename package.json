@@ -1,0 +1,30 @@
+{
+	"name": "tailwind-forum",
+	"homepage": "https://github.com/dvlpr1996",
+	"author": "Nima jahan bakhshian",
+	"version": "1.0.0",
+	"description": "forum based on the tailwind and alpine.js",
+	"main": "index.html",
+	"scripts": {
+		"dev": "npx tailwindcss -i ./app/css/input.css -o ./dist/css/output.css --watch",
+		"build": "npx tailwindcss -i ./app/css/input.css -o ./dist/css/output.css --minify"
+	},
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"keywords": [
+		"tailwindCss",
+		"alpine.js",
+		"forum"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/dvlpr1996//issues"
+	},
+	"devDependencies": {
+		"@tailwindcss/line-clamp": "^0.4.2",
+		"tailwindcss": "^3.2.4",
+		"tailwindcss-debug-screens": "^2.2.1"
+	}
+}
